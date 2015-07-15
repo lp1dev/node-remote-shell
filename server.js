@@ -49,5 +49,10 @@ net.createServer(function(sock) {
 	    });
     });
 }).listen(PORT, HOST);
-
+    
 console.log('Server listening on ' + HOST +':'+ PORT);
+
+
+process.on('uncaughtException', function (err) {
+    console.log("Well , exception was uncaught but since I'm not supposed to stop...");
+});
